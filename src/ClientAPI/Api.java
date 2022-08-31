@@ -20,7 +20,6 @@ public class Api {
         // CONEXÃO COM A API //
         // ------------------//
 
-        // CRIA UMA LISTA DO TIPO MAP (DICIONARIO)
         client = HttpClient.newHttpClient(); // INSTANCIA A CLASSE HTTP QUE IRA FAZER A CONEXÃO COM A API
         request = HttpRequest.newBuilder(URI.create(url)).GET().build(); // FAZ O REQUEST DA URL (BUSCA NO NAVEGADOR)
     }
@@ -30,6 +29,7 @@ public class Api {
                                                                  // RESPOSTA
         String body = res.body();
 
+        // CRIA UMA LISTA DO TIPO MAP (DICIONARIO)
         List<Map<String, String>> result = JSON.parse(body); // Store in var
         return result;
     }
